@@ -1,0 +1,1 @@
+web: gunicorn Nova1.wsgi:application
