@@ -11,8 +11,8 @@ class EpreuveViewSet(viewsets.ModelViewSet):
     serializer_class = EpreuveSerializer
 
 
-    @api_view(['POST'])
-    def verify_admin_password(request):
+@api_view(['POST'])
+def verify_admin_password(request):
         password_saisi = request.data.get('password', '')
 
         # Ton mot de passe haché enregistré en base ou dans settings
