@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'corsheaders',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -155,3 +157,11 @@ CSRF_TRUSTED_ORIGINS = [
     'https://*.up.railway.app',
     'https://nova-pour-tous1.netlify.app',
 ]
+# Configuration Cloudinary pour les fichiers média (PDFs)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'Racine',
+    'API_KEY': '354697526834222',
+    'API_SECRET': 'jy2-BLeMlBakHMi-9vbDqsuvCl0'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
