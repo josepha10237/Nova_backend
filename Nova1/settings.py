@@ -24,6 +24,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.storage
+
+# Configuration Cloudinary (via la variable globale ou les clés séparées)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME', 'lussdjg'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY', '354697526834222'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET', 'jy2-BLeMlBakHMi-9vbDqsuvCl0')
+}
+
+# C'est CETTE ligne qui force Django à envoyer les fichiers sur Cloudinary :
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-pp7yklklgp!7y$h%$o%#xq5%9lo(2ni&4to8^guu&n-%^xl*d*')
 # SECURITY WARNING: don't run with debug turned on in production!
