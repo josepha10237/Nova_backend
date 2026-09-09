@@ -159,7 +159,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 # Configuration Cloudinary pour les fichiers média (PDFs)
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'Racine',
+    'CLOUD_NAME': 'luzsdjjg',
     'API_KEY': '354697526834222',
     'API_SECRET': 'jy2-BLeMlBakHMi-9vbDqsuvCl0'
 }
