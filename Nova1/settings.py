@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'corsheaders',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -90,3 +91,22 @@ CSRF_TRUSTED_ORIGINS = [
     'https://*.up.railway.app',
     'https://nova-pour-tous1.netlify.app',
 ]
+# 1. Configuration du stockage par défaut avec django-storages (S3)
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
+
+# 2. Tes identifiants S3 Supabase
+AWS_ACCESS_KEY_ID = 'c347fa829aa283eb1fc4ef67bca65fc5'
+AWS_SECRET_ACCESS_KEY = '15049365da853f7ba86f4e03f49da8b45d51bd75e69784ef5911e2e5b59b21ea'
+AWS_STORAGE_BUCKET_NAME = 'NOVA'
+AWS_S3_ENDPOINT_URL = 'https://ayvkiiqmxqtfnifqyjlo.supabase.co/storage/v1/s3'  # Corrigé (sans le double storage)
+AWS_S3_REGION_NAME = 'eu-west-1'  # Mets la région exacte indiquée sur ton dashboard Supabase si ce n'est pas us-east-1
+AWS_DEFAULT_ACL = None
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_FILE_OVERWRITE = False
