@@ -25,7 +25,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -82,15 +81,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 
-
-
-
-CORS_ALLOW_ALL_ORIGINS = True
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://*.up.railway.app',
-    'https://nova-pour-tous1.netlify.app',
-]
 # 1. Configuration du stockage par défaut avec django-storages (S3)
 STORAGES = {
     "default": {
@@ -110,3 +100,10 @@ AWS_S3_REGION_NAME = 'eu-west-1'  # Mets la région exacte indiquée sur ton das
 AWS_DEFAULT_ACL = None
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_FILE_OVERWRITE = False
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.up.railway.app',
+    'https://nova-pour-tous1.netlify.app',
+]
