@@ -20,8 +20,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'corsheaders',
-    'cloudinary_storage',
-    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -83,13 +81,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME', 'luzsdjjg'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY', '354697526834222'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET', 'jy2-BLeMlBakHMi-9vbDqsuvCl0')
-}
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 
